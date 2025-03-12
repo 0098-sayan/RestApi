@@ -5,10 +5,13 @@ const app = express();
 PORT = 8000;
 
 app.get("/users", (req,res)=>{
-    const HTML=`<ul>${users.map((user)=>`<li>${user.first_name} ${user.last_name} ${user.email}</li>`).join('')}</ul>`;
+    const HTML=`<ul>${users.map((user)=>`<li>${user.first_name} ${user.last_name} </li>`).join('')}</ul>`;
     res.send(HTML);
 })
 
+app.post("/user", (req,res)=>{
+    res.send("Post request");
+})
 
 //Rest api
 app.get("/api/users",(req,res) =>{
